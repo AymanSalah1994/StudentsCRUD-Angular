@@ -17,6 +17,7 @@
         <td>
           <button (click)="showDetails(item.id)">Details</button>
           <button (click)="deleteStudent(item.id)">Delete</button>
+          <button (click)="updateTempDataShowForm(item.id)">Update</button>
         </td>
       </tr>
     </tbody>
@@ -26,5 +27,9 @@
   <!-- We will Wrap This Component in a div For the Hidding Flag  -->
   <div *ngIf="singleDetailFlag">
     <app-signle-student-details [singleStudent]="outPutStudentDetails" (onHideButtonClick)="toggleHide()"></app-signle-student-details>
+  </div>
+
+  <div *ngIf="updateDetailFlag">
+    <app-update-student [updateSingleStudent]="tempUpdateDetails" (onHideButtonClick)="toggleHide()"></app-update-student>
   </div>
 </div>
