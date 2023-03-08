@@ -17,4 +17,17 @@ export class StudentListComponent {
     new Student(3,"Suzan" , 30)
   ] ;
 
+  outPutStudentDetails:Student = new Student(6,"outStd" ,6) ;
+
+  showDetails(id:number)
+  {
+     this.students
+     .forEach(eachStudent => {
+        if (eachStudent.id == id)
+        {
+          this.outPutStudentDetails = eachStudent ;
+        }
+     });
+  }
+
 }
