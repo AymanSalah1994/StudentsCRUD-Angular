@@ -38,7 +38,23 @@ export class StudentListComponent {
 
   pushNewStudent(newSTD:Student)
   {
-    this.students.push(new Student(newSTD.id , newSTD.name , newSTD.age)); 
+    this.students.push(new Student(newSTD.id , newSTD.name , newSTD.age));
   }
 
+  deleteStudent(id:number)
+  {
+  let toDeleteStd = new Student(0,"",0) ;
+    for (let index = 0; index < this.students.length; index++) {
+      if (id == this.students[index].id)
+      {
+        toDeleteStd = this.students[index] ;
+      }
+    } // End of For
+    this.students = this.students.filter(function name(eachItem) {
+      return eachItem != toDeleteStd ;
+    }) ;
+  }
+
+
+  
 }
