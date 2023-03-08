@@ -18,7 +18,7 @@ export class StudentListComponent {
   ] ;
 
   outPutStudentDetails:Student = new Student(6,"outStd" ,6) ;
-
+  singleDetailFlag = false  ; // This is the initial Value So that the Details Section is Not Shown
   showDetails(id:number)
   {
      this.students
@@ -26,8 +26,14 @@ export class StudentListComponent {
         if (eachStudent.id == id)
         {
           this.outPutStudentDetails = eachStudent ;
+          this.singleDetailFlag = true ;
         }
      });
+  }
+
+  toggleHide()
+  {
+    this.singleDetailFlag = !this.singleDetailFlag ;
   }
 
 }

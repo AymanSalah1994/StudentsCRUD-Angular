@@ -21,5 +21,8 @@
   </table>
   <!--  -->
   <!-- Binding Some Data From Parent to an INPUT inside Child Component to show it -->
-  <app-signle-student-details [singleStudent]="outPutStudentDetails"></app-signle-student-details>
+  <!-- We will Wrap This Component in a div For the Hidding Flag  -->
+  <div *ngIf="singleDetailFlag">
+    <app-signle-student-details [singleStudent]="outPutStudentDetails" (onHideButtonClick)="toggleHide()"></app-signle-student-details>
+  </div>
 </div>
