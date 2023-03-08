@@ -1,0 +1,69 @@
+1 - ( $ ng new StudentsCRUD )
+    - To Create the new Project Of Course We Need to Start with this . 
+
+
+2- ($ npm install bootstrap )
+    - For Styleing the Tables . 
+    - Bootstrap Files Are in the "Node Modules" Folder , Remember this to use them Later 
+    [ node_modules/bootstrap/dist/css/bootstrap.css ] << Add this path and Restart the Server to see Style 
+    INSIDE angular.json File 
+
+    "styles": [
+              "src/styles.css" ,
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
+            ]
+
+
+
+3- ($ npm install jquery )
+    - Just For Bootstrap , in Case there is Some kind of Dependency . 
+
+
+
+4- Creating the Model Class For the Student : 
+    - ( $ ng generate class _models/student --skip-tests  )
+
+5- Creating the List Component --> [ This is the List where we will Make All the CRUD operations  ] 
+    - ($ ng generate component student/studentList )
+    NOW you Can include the {<app-student-list> } Component in the appComponent HTML file and Check it . 
+
+
+6- Next we Start Creating the Model Data in the Student Model Class [ Check the Model File and Check the Comments ]
+
+7- Now We Will Work of the studentList Component  :
+    - Remember : a Component is [ HTML structure + CSS + a TS Class With Data and Behaviours/Actions]
+
+7.1: [in the List Component]   
+    A - Making an Array of Students in the Class 
+    B - Now in the HTML File For this Component we Can Access this Data and Manipulate it Too . 
+        - in the HTML file we Create a Table and Use the List of Data  To fill This Table ; 
+
+=========================================
+================CRUD=====================
+=========================================
+1-Reading Details [ Showing Details For Each Student ]
+    - For this One We Will Make a little Component That show the Details , It will be a Child Component .
+    - $ ng generate component student/signleStudentDetails
+    - Now we Have this new Little Component , We will Combine it with the List Component [ List Component is Parent ]
+
+    - Sending Data From Parent to Child and Vice Versa [ TODO --> A File To Explain it all ]
+    //TODO: @Input && @Output
+
+
+2-Creating/Adding new Student : 
+    - $ ng generate component student/addStudent
+    - We need Forms and the Banana in the Box  , so     
+        import { FormsModule } from '@angular/forms';
+
+3- Deleting : 
+    - Just Send the ID , and Delete Object from the Array  ; 
+
+4- Update [ Steps ]
+    - Create Update Component 
+    - Update Has a Mix From "ShowDetails And AddNewStudent"
+
+        OnCliking Update ->> Show Update Component Like Showing Details [ And Sending Data of the Student to Child Component]
+
+        OnClicking Save in thr Update Component >> Emit the Click Event to Parent Component , and Parent will Hide the Child Component again  ; 
+    
+
