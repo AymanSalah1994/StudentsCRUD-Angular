@@ -36,4 +36,9 @@ export class StudentListComponent {
     this.singleDetailFlag = !this.singleDetailFlag ;
   }
 
+  pushNewStudent(newSTD:Student)
+  {
+    this.students.push(new Student(newSTD.id , newSTD.name , newSTD.age)); 
+  }
+
 }
