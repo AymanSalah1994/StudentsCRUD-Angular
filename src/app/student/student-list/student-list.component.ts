@@ -77,10 +77,12 @@ export class StudentListComponent {
     // AND SAVE IT when Save Button is Clicked
     // I think only Removing Update Form is OK !
     // But We Can Do the Emit Part If we Want
-
-    // We will Only Emit the Click Event so that the Form Is Hidden 
+    // We will Only Emit the Click Event so that the Form Is Hidden
   }
 
   updateStudent()
-  {}
+  {
+    this.updateDetailFlag = false  ;
+    // this.updateDetailFlag = !this.updateDetailFlag  ;
+  }
 }

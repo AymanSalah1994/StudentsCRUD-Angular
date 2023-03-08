@@ -1,4 +1,4 @@
-import { Component ,Input} from '@angular/core';
+import { Component ,EventEmitter,Input, Output} from '@angular/core';
 import { Student } from 'src/app/_models/student';
 
 @Component({
@@ -8,5 +8,11 @@ import { Student } from 'src/app/_models/student';
 })
 export class UpdateStudentComponent {
 
+  @Output() onSaveClick:EventEmitter<void> = new EventEmitter() ;
   @Input() updateSingleStudent:Student = new Student(33,"Dummy", 33) ;
+
+  saveUpdate()
+  {
+    this.onSaveClick.emit() ; 
+  }
 }

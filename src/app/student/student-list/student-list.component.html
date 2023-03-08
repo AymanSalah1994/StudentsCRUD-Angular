@@ -30,6 +30,6 @@
   </div>
 
   <div *ngIf="updateDetailFlag">
-    <app-update-student [updateSingleStudent]="tempUpdateDetails" (onHideButtonClick)="toggleHide()"></app-update-student>
+    <app-update-student [updateSingleStudent]="tempUpdateDetails" (onSaveClick)="updateStudent()"></app-update-student>
   </div>
 </div>
