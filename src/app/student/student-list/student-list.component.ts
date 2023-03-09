@@ -71,7 +71,7 @@ export class StudentListComponent {
       }
     } // End of For
 
-    this.tempUpdateDetails = toUpdateStd ;
+    this.tempUpdateDetails = new Student(toUpdateStd.id , toUpdateStd.name , toUpdateStd.age) ;
     // Reference is the SAME
     // NO NEED TO EMIT DATA Of Student Object
     // AND SAVE IT when Save Button is Clicked
@@ -80,8 +80,19 @@ export class StudentListComponent {
     // We will Only Emit the Click Event so that the Form Is Hidden
   }
 
-  updateStudent()
+  updateStudent(std:Student)
   {
+    let toUpdateStd = new Student(0,"",0) ;
+    for (let index = 0; index < this.students.length; index++) {
+      if (std.id == this.students[index].id)
+      {
+        toUpdateStd = this.students[index] ;
+      }
+    } // End of For
+    toUpdateStd.age = std.age ;
+    toUpdateStd.name= std.name ;
+    // Update it with the New Data
+    // Clear the Flag
     this.updateDetailFlag = false  ;
     // this.updateDetailFlag = !this.updateDetailFlag  ;
   }

@@ -8,11 +8,11 @@ import { Student } from 'src/app/_models/student';
 })
 export class UpdateStudentComponent {
 
-  @Output() onSaveClick:EventEmitter<void> = new EventEmitter() ;
+  @Output() onSaveClick:EventEmitter<Student> = new EventEmitter() ;
   @Input() updateSingleStudent:Student = new Student(33,"Dummy", 33) ;
 
   saveUpdate()
   {
-    this.onSaveClick.emit() ; 
+    this.onSaveClick.emit(this.updateSingleStudent) ;
   }
 }
