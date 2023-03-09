@@ -7,7 +7,7 @@ import { Student } from 'src/app/_models/student';
   styleUrls: ['./student-list.component.css']
 })
 
-//
+
 export class StudentListComponent {
 
   students : Student[] = [
@@ -83,6 +83,7 @@ export class StudentListComponent {
   updateStudent(std:Student)
   {
     if (std.id == -777)
+    // A temporary Flag
     {
       this.updateDetailFlag = false   ;
     }
@@ -102,6 +103,5 @@ export class StudentListComponent {
       this.updateDetailFlag = false  ;
       // this.updateDetailFlag = !this.updateDetailFlag  ;
     }
-
   }
 }
