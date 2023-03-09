@@ -15,4 +15,9 @@ export class UpdateStudentComponent {
   {
     this.onSaveClick.emit(this.updateSingleStudent) ;
   }
+
+  clear()
+  {
+    this.onSaveClick.emit(new Student(-777,"",-777)) ;
+  }
 }

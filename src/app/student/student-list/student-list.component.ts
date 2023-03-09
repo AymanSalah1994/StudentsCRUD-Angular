@@ -82,18 +82,26 @@ export class StudentListComponent {
 
   updateStudent(std:Student)
   {
-    let toUpdateStd = new Student(0,"",0) ;
-    for (let index = 0; index < this.students.length; index++) {
-      if (std.id == this.students[index].id)
-      {
-        toUpdateStd = this.students[index] ;
-      }
-    } // End of For
-    toUpdateStd.age = std.age ;
-    toUpdateStd.name= std.name ;
-    // Update it with the New Data
-    // Clear the Flag
-    this.updateDetailFlag = false  ;
-    // this.updateDetailFlag = !this.updateDetailFlag  ;
+    if (std.id == -777)
+    {
+      this.updateDetailFlag = false   ;
+    }
+    else
+    {
+      let toUpdateStd = new Student(0,"",0) ;
+      for (let index = 0; index < this.students.length; index++) {
+        if (std.id == this.students[index].id)
+        {
+          toUpdateStd = this.students[index] ;
+        }
+      } // End of For
+      toUpdateStd.age = std.age ;
+      toUpdateStd.name= std.name ;
+      // Update it with the New Data
+      // Clear the Flag
+      this.updateDetailFlag = false  ;
+      // this.updateDetailFlag = !this.updateDetailFlag  ;
+    }
+
   }
 }
